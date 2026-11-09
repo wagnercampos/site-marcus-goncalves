@@ -704,13 +704,14 @@ document.addEventListener('click', e => {
 });
 
 // ── UMAMI: carrega só depois da página aberta, para a estatística nunca atrasar a abertura ──
-window.addEventListener('load', () => {
+// Espera um quadro pintado depois do load: assim a foto principal já está na tela antes do Umami chamar o servidor
+window.addEventListener('load', () => requestAnimationFrame(() => setTimeout(() => {
   const u = document.createElement('script');
   u.src = 'https://analytics.agenciamoa.com.br/script.js';
   u.setAttribute('data-website-id', '37c20a71-f719-4f9b-90f9-f53be06717fc');
   u.onload = () => { const e = document.createElement('script'); e.src = '/js/analytics-events.js'; document.body.appendChild(e); };
   document.head.appendChild(u);
-});
+}, 300)));
 </script>
 
 </body>
