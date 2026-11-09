@@ -22,15 +22,21 @@
 <meta name="twitter:title" content="Sua empresa está protegida. E o seu patrimônio?">
 <meta name="twitter:description" content="Testamento, autocuratela, procuração, ata notarial e pacto antenupcial: serviços jurídicos com atos de cartório para clientes da assessoria.">
 <meta name="twitter:image" content="https://marcusgoncalvesadvocacia.com.br/assets/img/clientes-compartilhar.jpg">
-<link rel="icon" type="image/webp" href="/assets/img/logo.webp">
-<link rel="apple-touch-icon" href="/assets/img/logo.webp">
-<link rel="preload" as="image" href="/assets/img/marcus-retrato-escritorio.webp" imagesrcset="/assets/img/marcus-retrato-escritorio-720.webp 720w, /assets/img/marcus-retrato-escritorio.webp 1200w" imagesizes="(max-width: 1024px) 88vw, 460px">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/webp" href="/assets/img/logo-72.webp">
+<link rel="apple-touch-icon" href="/assets/img/logo-180.png">
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/cormorant-garamond-v21.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/cormorant-garamond-italic-v21.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/outfit-v15.woff2" crossorigin>
+<link rel="preload" as="image" href="/assets/img/marcus-retrato-escritorio.webp" imagesrcset="/assets/img/marcus-retrato-escritorio-480.webp 480w, /assets/img/marcus-retrato-escritorio-720.webp 720w, /assets/img/marcus-retrato-escritorio.webp 1200w" imagesizes="(max-width: 1024px) 88vw, 460px" fetchpriority="high">
 
 <style>
+/* Fontes hospedadas no próprio site (antes vinham do Google e travavam a primeira pintura) */
+@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 300 500; font-display: swap; src: url(/assets/fonts/cormorant-garamond-v21.woff2) format('woff2'); }
+@font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 300 400; font-display: swap; src: url(/assets/fonts/cormorant-garamond-italic-v21.woff2) format('woff2'); }
+@font-face { font-family: 'Outfit'; font-style: normal; font-weight: 300 600; font-display: swap; src: url(/assets/fonts/outfit-v15.woff2) format('woff2'); }
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
 :root {
   --gold: #A88868;
@@ -45,6 +51,8 @@
   --gray: #6D6D72;
   --nude: #EDE8E3;
   --line: #E1D9D0;
+  --gold-ink: #8C6E50;   /* dourado para texto pequeno em fundo claro (contraste AA) */
+  --gold-deep: #9A7A5A;  /* dourado para títulos grandes em fundo claro */
   --font-display: 'Cormorant Garamond', serif;
   --font-body: 'Outfit', sans-serif;
 }
@@ -87,9 +95,11 @@ nav {
   font-family: var(--font-display); font-size: clamp(32px, 3.5vw, 48px); font-weight: 400;
   color: var(--dark); line-height: 1.15;
 }
-.section-title em { font-style: italic; color: var(--gold); }
+.section-title em { font-style: italic; color: var(--gold-deep); }
 .sec-h { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: end; margin-bottom: 48px; }
 .sec-h p { font-size: 15px; color: var(--gray); line-height: 1.9; font-weight: 300; max-width: 34em; }
+#perfis .section-label, #como .section-label, #duvidas .section-label { color: var(--gold-ink); }
+#como .sec-h p { color: #55555A; }
 
 /* ── HERO ── */
 .hero { background: var(--dark); padding: 150px 5% 100px; position: relative; overflow: hidden; }
@@ -163,7 +173,7 @@ nav {
 .tab {
   font-family: var(--font-body); background: transparent; border: 0; border-bottom: 2px solid transparent;
   margin-bottom: -1px; padding: 14px 26px 16px 0; margin-right: 26px; cursor: pointer; text-align: left;
-  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; color: rgba(44,44,42,0.45);
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; color: var(--gray);
   transition: color 0.2s, border-color 0.2s;
 }
 .tab small { display: block; font-size: 12px; letter-spacing: 0; text-transform: none; font-weight: 300; color: var(--gray); margin-top: 4px; }
@@ -177,7 +187,7 @@ nav {
   transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
 }
 .card:hover::before { transform: scaleX(1); }
-.card .sit { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+.card .sit { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-ink); font-weight: 600; }
 .card h3 { font-family: var(--font-display); font-size: 25px; font-weight: 500; color: var(--dark); line-height: 1.2; }
 .card p { font-size: 14px; color: var(--gray); line-height: 1.8; font-weight: 300; }
 .card .row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--nude); }
@@ -208,13 +218,13 @@ nav {
 .cmp td { font-size: 14px; color: rgba(243,243,239,0.62); line-height: 1.75; font-weight: 300; }
 .cmp tbody tr { transition: background 0.2s; }
 .cmp tbody tr:hover { background: rgba(168,136,104,0.05); }
-.note { margin-top: 24px; font-size: 13.5px; color: rgba(243,243,239,0.45); line-height: 1.85; font-weight: 300; max-width: 72ch; position: relative; z-index: 1; }
+.note { margin-top: 24px; font-size: 13.5px; color: rgba(243,243,239,0.62); line-height: 1.85; font-weight: 300; max-width: 72ch; position: relative; z-index: 1; }
 
 /* ── COMO FUNCIONA ── */
 #como { background: var(--nude); }
 .steps { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--gold-pale); border: 1px solid var(--gold-pale); counter-reset: s; }
 .steps li { counter-increment: s; background: var(--off); padding: 34px 28px; display: flex; flex-direction: column; gap: 10px; }
-.steps li::before { content: "0" counter(s); font-variant-numeric: lining-nums; font-family: var(--font-display); font-size: 46px; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 8px; }
+.steps li::before { content: "0" counter(s); font-variant-numeric: lining-nums; font-family: var(--font-display); font-size: 46px; font-weight: 300; color: var(--gold-deep); line-height: 1; margin-bottom: 8px; }
 .steps h3 { font-family: var(--font-display); font-size: 23px; font-weight: 500; color: var(--dark); line-height: 1.2; }
 .steps p { font-size: 14px; color: var(--gray); line-height: 1.8; font-weight: 300; }
 
@@ -280,9 +290,9 @@ footer {
 }
 .footer-brand { font-family: var(--font-display); font-size: 15px; font-weight: 400; color: var(--gold); letter-spacing: 0.1em; }
 .footer-nav { display: flex; gap: 28px; list-style: none; flex-wrap: wrap; }
-.footer-nav a { font-size: 11px; color: rgba(243,243,239,0.25); text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+.footer-nav a { font-size: 11px; color: rgba(243,243,239,0.55); text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
 .footer-nav a:hover { color: var(--gold); }
-.footer-legal { font-size: 10px; color: rgba(243,243,239,0.28); line-height: 1.7; text-align: right; max-width: 500px; }
+.footer-legal { font-size: 10px; color: rgba(243,243,239,0.55); line-height: 1.7; text-align: right; max-width: 500px; }
 
 /* ── WHATSAPP FLOAT ── */
 .whatsapp-float {
@@ -381,8 +391,8 @@ footer {
 
 <!-- ── NAV ── -->
 <nav id="navbar">
-  <a href="/" class="nav-logo" aria-label="Marcus Gonçalves Advocacia, voltar para a página inicial">
-    <img src="/assets/img/logo.webp" alt="Logo Marcus Gonçalves Advocacia" width="36" height="36">
+  <a href="/" class="nav-logo" title="Voltar para a página inicial">
+    <img src="/assets/img/logo-72.webp" alt="" width="36" height="36">
     <div class="nav-logo-text">
       Marcus Gonçalves
       <span>Advocacia e Consultoria</span>
@@ -421,13 +431,14 @@ footer {
       </div>
       <figure class="portrait">
         <div class="portrait-frame">
-          <img src="/assets/img/marcus-retrato-escritorio.webp" srcset="/assets/img/marcus-retrato-escritorio-720.webp 720w, /assets/img/marcus-retrato-escritorio.webp 1200w" sizes="(max-width: 1024px) 88vw, 460px" width="1200" height="1500" alt="Marcus Gonçalves, advogado, no escritório" fetchpriority="high">
+          <img src="/assets/img/marcus-retrato-escritorio.webp" srcset="/assets/img/marcus-retrato-escritorio-480.webp 480w, /assets/img/marcus-retrato-escritorio-720.webp 720w, /assets/img/marcus-retrato-escritorio.webp 1200w" sizes="(max-width: 1024px) 88vw, 460px" width="1200" height="1500" alt="Marcus Gonçalves, advogado, no escritório" fetchpriority="high">
         </div>
         <figcaption class="portrait-badge"><b>Marcus Gonçalves</b><span>Advogado · OAB/PI 6.953</span></figcaption>
       </figure>
     </div>
 
-    <div class="whatif" aria-label="Três situações que todo sócio deveria responder">
+    <div class="whatif">
+      <h2 class="sr-only">Três situações que todo sócio deveria responder</h2>
       <div class="whatif-card fade-up">
         <small>E se amanhã</small>
         <h3>O sócio falecer?</h3>
@@ -550,8 +561,8 @@ footer {
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
         Agendar pelo WhatsApp
       </a>
-      <div class="c-line"><span><small>WhatsApp</small>(86) 98181-6953</span><button class="copy" type="button" data-c="(86) 98181-6953">Copiar</button></div>
-      <div class="c-line"><span><small>E-mail</small>marcusgoncalves.advocacia<wbr>@gmail.com</span><button class="copy" type="button" data-c="marcusgoncalves.advocacia@gmail.com">Copiar</button></div>
+      <div class="c-line"><span><small>WhatsApp</small>(86) 98181-6953</span><button class="copy" type="button" data-c="(86) 98181-6953" data-umami-event="copiar_contato" data-umami-event-tipo="whatsapp">Copiar</button></div>
+      <div class="c-line"><span><small>E-mail</small>marcusgoncalves.advocacia<wbr>@gmail.com</span><button class="copy" type="button" data-c="marcusgoncalves.advocacia@gmail.com" data-umami-event="copiar_contato" data-umami-event-tipo="email">Copiar</button></div>
       <div class="c-line"><span><small>Escritório</small>R. Juiz João Almeida, 1806, Horto, Teresina/PI</span></div>
     </div>
   </div>
@@ -636,6 +647,7 @@ PERFIS.forEach((p, i) => {
   const b = document.createElement('button');
   b.className = 'tab'; b.type = 'button'; b.id = 'tab-' + p.id;
   b.setAttribute('role', 'tab'); b.setAttribute('aria-controls', 'cards');
+  b.setAttribute('data-umami-event', 'perfil_aba'); b.setAttribute('data-umami-event-perfil', p.nome);
   b.innerHTML = p.nome + '<small>' + p.sub + '</small>';
   b.addEventListener('click', () => show(i));
   tabs.appendChild(b);
@@ -645,7 +657,7 @@ function show(i, init) {
   [...tabs.children].forEach((t, k) => { t.setAttribute('aria-selected', k === i); t.tabIndex = k === i ? 0 : -1; });
   cards.setAttribute('aria-labelledby', 'tab-' + p.id);
   intro.textContent = p.intro;
-  cards.innerHTML = p.itens.map(it => `<article class="card"><span class="sit">${it.s}</span><h3>${it.t}</h3><p>${it.d}</p><div class="row"><span class="pill">${it.c}</span><span class="pill g">${it.f}</span></div><a class="more" href="${wa(it.t)}" target="_blank" rel="noopener">Quero saber mais →</a></article>`).join('');
+  cards.innerHTML = p.itens.map(it => `<article class="card"><span class="sit">${it.s}</span><h3>${it.t}</h3><p>${it.d}</p><div class="row"><span class="pill">${it.c}</span><span class="pill g">${it.f}</span></div><a class="more" href="${wa(it.t)}" target="_blank" rel="noopener" data-umami-event="interesse_servico" data-umami-event-servico="${it.t}" data-umami-event-perfil="${p.nome}">Quero saber mais →</a></article>`).join('');
   if (!init) { try { history.replaceState(null, '', '#perfil-' + p.id); } catch (e) {} }
 }
 tabs.addEventListener('keydown', e => {
@@ -657,9 +669,27 @@ tabs.addEventListener('keydown', e => {
 });
 // Link direto por perfil: /clientes/#perfil-condominio abre a aba certa e rola até ela
 const hashPerfil = location.hash.indexOf('#perfil-') === 0 ? location.hash.slice(8) : '';
-const inicio = Math.max(0, PERFIS.findIndex(p => p.id === hashPerfil));
-show(inicio, true);
-if (hashPerfil) window.addEventListener('load', () => document.getElementById('perfis').scrollIntoView());
+const idxPerfil = PERFIS.findIndex(p => p.id === hashPerfil);
+show(Math.max(0, idxPerfil), true);
+if (idxPerfil >= 0) {
+  // espera só as fontes (não o analytics) para a rolagem cair no lugar certo
+  const rolar = () => document.getElementById('perfis').scrollIntoView();
+  (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(rolar);
+}
+
+// ── UMAMI: eventos desta página ──
+// Cliques em aba, "Quero saber mais" e "Copiar" vão pelos atributos data-umami-event.
+// Aqui ficam os que dependem de script: link aberto por perfil e pergunta aberta no FAQ.
+function waitUmami(cb, tentativas) {
+  tentativas = tentativas || 0;
+  if (window.umami && typeof window.umami.track === 'function') cb();
+  else if (tentativas < 20) setTimeout(() => waitUmami(cb, tentativas + 1), 300);
+}
+function rastrear(evento, dados) { waitUmami(() => window.umami.track(evento, dados)); }
+if (idxPerfil >= 0) rastrear('link_perfil', { perfil: PERFIS[idxPerfil].nome });
+document.querySelectorAll('.faq details').forEach(d => {
+  d.addEventListener('toggle', () => { if (d.open) rastrear('faq_aberta', { pergunta: d.querySelector('summary').textContent.trim() }); });
+});
 
 // ── COPIAR CONTATO ──
 document.addEventListener('click', e => {
