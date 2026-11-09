@@ -690,28 +690,80 @@ nav {
   font-weight: 300;
 }
 
-/* Clientes atuais → /clientes/ */
-.clientes-cta {
+/* ── DESTAQUE CLIENTES → /clientes/ ── */
+.clientes-band {
+  background: var(--white);
   max-width: 1400px;
-  margin: 64px auto 0;
-  padding-top: 48px;
-  border-top: 1px solid rgba(168,136,104,0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  flex-wrap: wrap;
-  position: relative;
-  z-index: 1;
-  text-align: center;
+  margin: 0 auto;
+  padding: 72px 5% 0;
 }
 
-.clientes-cta-text {
+.clientes-band-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  background: var(--dark);
+  border-left: 3px solid var(--gold);
+  padding: 44px 52px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+
+.clientes-band-card::after {
+  content: '';
+  position: absolute;
+  top: -140px; right: -80px;
+  width: 360px; height: 360px;
+  border-radius: 50%;
+  border: 1px solid rgba(168,136,104,0.14);
+  pointer-events: none;
+}
+
+.clientes-band-card:hover { background: var(--dark-2); }
+.clientes-band-card:hover .btn-primary { background: var(--gold-light); }
+
+.clientes-band-label {
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.clientes-band-label::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.clientes-band-title {
   font-family: var(--font-display);
-  font-size: 24px;
-  font-style: italic;
+  font-size: clamp(28px, 3vw, 40px);
   font-weight: 400;
+  color: var(--off);
+  line-height: 1.2;
+}
+
+.clientes-band-title em {
+  display: block;
+  font-style: italic;
   color: var(--gold-light);
+}
+
+.clientes-band-card .btn-primary {
+  flex: none;
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
 }
 
 /* ── CTA MEIO ── */
@@ -1328,7 +1380,10 @@ footer {
   .nav-links { display: none; }
   .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 72px; left: 0; right: 0; background: var(--dark); padding: 20px 5%; gap: 16px; border-bottom: 1px solid rgba(168,136,104,0.15); }
   .nav-toggle { display: flex; }
-  
+
+  .clientes-band { padding: 48px 6% 0; }
+  .clientes-band-card { flex-direction: column; align-items: flex-start; gap: 28px; padding: 34px 26px; }
+
   .strip-item { padding: 14px 20px; }
   .strip-num { font-size: 28px; }
   
@@ -1455,6 +1510,17 @@ footer {
     <div class="strip-label">Contrato. Suporte jurídico completo.</div>
   </div>
 </div>
+
+<!-- ── DESTAQUE PARA CLIENTES ── -->
+<section class="clientes-band" aria-label="Área para clientes do escritório">
+  <a href="/clientes/" class="clientes-band-card fade-up" data-umami-event="clique_area_clientes">
+    <div>
+      <div class="clientes-band-label">Para clientes do escritório</div>
+      <h2 class="clientes-band-title">É cliente do escritório? <em>Veja o que temos disponível especialmente para você.</em></h2>
+    </div>
+    <span class="btn-primary">Ver agora <span aria-hidden="true">→</span></span>
+  </a>
+</section>
 
 <!-- ── SOBRE ── -->
 <section id="sobre" aria-label="Sobre o Dr. Marcus Gonçalves">
@@ -1593,11 +1659,6 @@ footer {
         <p class="publico-desc">Clínicas, médicos sócios, gestores. Contratos com planos, médico PJ, sociedades médicas — alta demanda, pouca especialização no Piauí.</p>
       </div>
     </div>
-  </div>
-
-  <div class="clientes-cta fade-up">
-    <p class="clientes-cta-text">Já é cliente da assessoria?</p>
-    <a href="/clientes/" class="btn-secondary">Veja a proteção do sócio <span aria-hidden="true">→</span></a>
   </div>
 </section>
 
