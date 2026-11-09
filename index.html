@@ -3,27 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marcus Gonçalves — Advocacia e Consultoria Empresarial</title>
+<title>Marcus Gonçalves | Advocacia e Consultoria Empresarial</title>
 <meta name="description" content="Assessoria jurídica mensal para empresas, condomínios e sindicatos patronais em Teresina, Piauí. Direito Trabalhista e Empresarial com mais de 15 anos de experiência.">
 <meta name="robots" content="index, follow">
 <meta name="keywords" content="advogado empresarial teresina, assessoria jurídica piauí, direito trabalhista, direito empresarial, marcus gonçalves advocacia">
-<meta property="og:title" content="Marcus Gonçalves — Advocacia e Consultoria Empresarial">
+<meta property="og:title" content="Marcus Gonçalves | Advocacia e Consultoria Empresarial">
 <meta property="og:description" content="Assessoria jurídica mensal para empresas, condomínios e sindicatos patronais em Teresina, Piauí. Proteção jurídica preventiva para o seu negócio.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://marcusgoncalvesadvocacia.com.br">
-<meta property="og:image" content="https://marcusgoncalvesadvocacia.com.br/assets/img/hero.webp">
+<meta property="og:image" content="https://marcusgoncalvesadvocacia.com.br/assets/img/home-compartilhar.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Dr. Marcus Gonçalves, advogado empresarial em Teresina">
+<meta property="og:site_name" content="Marcus Gonçalves Advocacia">
 <meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#111110">
 <link rel="canonical" href="https://marcusgoncalvesadvocacia.com.br">
-<link rel="icon" type="image/png" href="assets/img/logo.webp">
-<link rel="apple-touch-icon" href="assets/img/logo.webp">
-<link rel="preload" as="image" href="assets/img/hero.webp">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/webp" href="/assets/img/logo-72.webp">
+<link rel="apple-touch-icon" href="/assets/img/logo-180.png">
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/cormorant-garamond-v21.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/cormorant-garamond-italic-v21.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/outfit-v15.woff2" crossorigin>
+<link rel="preload" as="image" href="/assets/img/hero.webp" imagesrcset="/assets/img/hero-480.webp 480w, /assets/img/hero-720.webp 720w, /assets/img/hero-1000.webp 1000w, /assets/img/hero.webp 1333w" imagesizes="(max-width: 1024px) 100vw, 50vw" fetchpriority="high">
 
 <style>
+@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 300 500; font-display: swap; src: url(/assets/fonts/cormorant-garamond-v21.woff2) format('woff2'); }
+@font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 300 400; font-display: swap; src: url(/assets/fonts/cormorant-garamond-italic-v21.woff2) format('woff2'); }
+@font-face { font-family: 'Outfit'; font-style: normal; font-weight: 300 600; font-display: swap; src: url(/assets/fonts/outfit-v15.woff2) format('woff2'); }
+/* Fontes reserva com a mesma métrica: o texto não pula quando a fonte da marca chega */
+@font-face { font-family: 'Cormorant Fallback'; font-style: normal; src: local('Times New Roman'), local('TimesNewRomanPSMT'), local('Times'); size-adjust: 96%; ascent-override: 96%; descent-override: 30%; line-gap-override: 0%; }
+@font-face { font-family: 'Cormorant Fallback'; font-style: italic; src: local('Times New Roman Italic'), local('TimesNewRomanPS-ItalicMT'), local('Times-Italic'); size-adjust: 86%; ascent-override: 107%; descent-override: 34%; line-gap-override: 0%; }
+@font-face { font-family: 'Outfit Fallback'; font-style: normal; src: local('Arial'), local('ArialMT'), local('Helvetica'); size-adjust: 98%; ascent-override: 102%; descent-override: 26.5%; line-gap-override: 0%; }
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -38,8 +51,9 @@
   --white: #ffffff;
   --gray: #6D6D72;
   --nude: #EDE8E3;
-  --font-display: 'Cormorant Garamond', serif;
-  --font-body: 'Outfit', sans-serif;
+  --gold-ink: #80634A; /* dourado para texto pequeno em fundo claro (contraste AA) */
+  --font-display: 'Cormorant Garamond', 'Cormorant Fallback', serif;
+  --font-body: 'Outfit', 'Outfit Fallback', sans-serif;
 }
 
 html { scroll-behavior: smooth; font-size: 16px; }
@@ -140,7 +154,11 @@ nav {
   gap: 5px;
   cursor: pointer;
   padding: 4px;
+  background: none;
+  border: 0;
 }
+
+.nav-toggle:focus-visible { outline: 1px solid var(--gold); outline-offset: 4px; }
 
 .nav-toggle span {
   display: block;
@@ -300,7 +318,7 @@ nav {
   font-size: 10px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(243,243,239,0.3);
+  color: rgba(243,243,239,0.55);
   z-index: 3;
 }
 
@@ -351,7 +369,7 @@ nav {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: rgba(17,17,16,0.65);
+  color: rgba(17,17,16,0.85);
   line-height: 1.4;
   max-width: 110px;
 }
@@ -432,13 +450,15 @@ nav {
   font-size: 10px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-ink);
   font-weight: 600;
   margin-bottom: 16px;
   display: flex;
   align-items: center;
   gap: 12px;
 }
+
+#servicos .section-label, #contato .section-label { color: var(--gold); }
 
 .section-label::before {
   content: '';
@@ -517,7 +537,7 @@ nav {
 .cred-text span {
   display: block;
   font-size: 11px;
-  color: var(--gold);
+  color: var(--gold-ink);
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -565,7 +585,7 @@ nav {
 
 .servicos-header .section-sub {
   font-size: 15px;
-  color: rgba(243,243,239,0.45);
+  color: rgba(243,243,239,0.55);
   line-height: 1.9;
   font-weight: 300;
 }
@@ -635,7 +655,7 @@ nav {
 
 .servico-desc {
   font-size: 13px;
-  color: rgba(243,243,239,0.45);
+  color: rgba(243,243,239,0.55);
   line-height: 1.8;
   font-weight: 300;
 }
@@ -685,7 +705,7 @@ nav {
 
 .publico-desc {
   font-size: 13px;
-  color: rgba(243,243,239,0.4);
+  color: rgba(243,243,239,0.55);
   line-height: 1.75;
   font-weight: 300;
 }
@@ -823,7 +843,7 @@ nav {
 
 .cta-mid-text {
   font-size: 14px;
-  color: rgba(243,243,239,0.45);
+  color: rgba(243,243,239,0.55);
   line-height: 1.9;
   margin-bottom: 36px;
   font-weight: 300;
@@ -885,7 +905,7 @@ nav {
 
 .diferencial-desc {
   font-size: 14px;
-  color: var(--gray);
+  color: #5F5F64;
   line-height: 1.8;
   font-weight: 300;
 }
@@ -943,7 +963,7 @@ nav {
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-ink);
   text-decoration: none;
   font-weight: 600;
   display: flex;
@@ -981,7 +1001,7 @@ nav {
   font-size: 9px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-ink);
   font-weight: 700;
   padding: 20px 24px 0;
   display: block;
@@ -1015,7 +1035,7 @@ nav {
 
 .artigo-date {
   font-size: 11px;
-  color: var(--gold);
+  color: var(--gold-ink);
   letter-spacing: 0.06em;
 }
 
@@ -1046,7 +1066,7 @@ nav {
 .artigos-empty p {
   font-family: var(--font-display);
   font-size: 22px;
-  color: var(--gold-light);
+  color: var(--gold-ink);
   margin-bottom: 8px;
 }
 
@@ -1121,7 +1141,7 @@ nav {
 
 .contato-text {
   font-size: 15px;
-  color: rgba(243,243,239,0.45);
+  color: rgba(243,243,239,0.55);
   line-height: 1.9;
   margin-bottom: 40px;
   font-weight: 300;
@@ -1199,7 +1219,7 @@ nav {
 
 .contato-cta-box-text {
   font-size: 13px;
-  color: rgba(243,243,239,0.4);
+  color: rgba(243,243,239,0.55);
   line-height: 1.9;
   margin-bottom: 32px;
   font-weight: 300;
@@ -1242,7 +1262,7 @@ nav {
   align-items: center;
   gap: 8px;
   font-size: 11px;
-  color: rgba(243,243,239,0.35);
+  color: rgba(243,243,239,0.55);
   text-decoration: none;
   letter-spacing: 0.1em;
   transition: color 0.2s;
@@ -1285,7 +1305,7 @@ footer {
 
 .footer-nav a {
   font-size: 11px;
-  color: rgba(243,243,239,0.25);
+  color: rgba(243,243,239,0.55);
   text-decoration: none;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1296,7 +1316,7 @@ footer {
 
 .footer-legal {
   font-size: 10px;
-  color: rgba(243,243,239,0.18);
+  color: rgba(243,243,239,0.5);
   line-height: 1.7;
   text-align: right;
   max-width: 400px;
@@ -1438,14 +1458,13 @@ footer {
   ]
 }
 </script>
-<script defer src="https://analytics.agenciamoa.com.br/script.js" data-website-id="37c20a71-f719-4f9b-90f9-f53be06717fc"></script>
 </head>
 <body>
 
 <!-- ── NAV ── -->
 <nav id="navbar">
-  <a href="#hero" class="nav-logo" aria-label="Marcus Gonçalves Advocacia">
-    <img src="assets/img/logo.webp" alt="Logo Marcus Gonçalves Advocacia">
+  <a href="#hero" class="nav-logo">
+    <img src="/assets/img/logo-72.webp" alt="" width="36" height="36">
     <div class="nav-logo-text">
       Marcus Gonçalves
       <span>Advocacia e Consultoria</span>
@@ -1458,11 +1477,12 @@ footer {
     <li><a href="#artigos">Artigos</a></li>
     <li><a href="#contato" class="nav-cta">Fale Conosco</a></li>
   </ul>
-  <div class="nav-toggle" id="navToggle" aria-label="Menu">
+  <button type="button" class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
     <span></span><span></span><span></span>
-  </div>
+  </button>
 </nav>
 
+<main>
 <!-- ── HERO ── -->
 <section id="hero" aria-label="Apresentação">
   <div class="hero-left">
@@ -1473,7 +1493,7 @@ footer {
       acontecer.
     </h1>
     <p class="hero-sub">
-      Assessoria jurídica mensal para empresas, condomínios e sindicatos patronais. Direito Trabalhista e Empresarial — consultivo e contencioso — em um único profissional.
+      Assessoria jurídica mensal para empresas, condomínios e sindicatos patronais. Direito Trabalhista e Empresarial, consultivo e contencioso, em um único profissional.
     </p>
     <div class="hero-actions">
       <a href="https://wa.me/5586981816953?text=Ol%C3%A1%2C%20Dr.%20Marcus%21%20Gostaria%20de%20saber%20mais%20sobre%20a%20assessoria%20jur%C3%ADdica." class="btn-primary" target="_blank" rel="noopener">
@@ -1485,7 +1505,7 @@ footer {
     </div>
   </div>
   <div class="hero-right" aria-hidden="true">
-    <img src="assets/img/hero.webp" alt="Dr. Marcus Gonçalves, advogado empresarial em Teresina">
+    <img src="/assets/img/hero.webp" srcset="/assets/img/hero-480.webp 480w, /assets/img/hero-720.webp 720w, /assets/img/hero-1000.webp 1000w, /assets/img/hero.webp 1333w" sizes="(max-width: 1024px) 100vw, 50vw" alt="Dr. Marcus Gonçalves, advogado empresarial em Teresina" fetchpriority="high">
     <div class="hero-overlay"></div>
   </div>
   <div class="hero-scroll" aria-hidden="true">Role para baixo</div>
@@ -1526,7 +1546,7 @@ footer {
 <section id="sobre" aria-label="Sobre o Dr. Marcus Gonçalves">
   <div class="sobre-image fade-up">
     <div class="sobre-image-wrap">
-      <img src="assets/img/sobre-1.webp" alt="Dr. Marcus Gonçalves — advogado empresarial Teresina PI" loading="lazy">
+      <img src="/assets/img/sobre-1-720.webp" srcset="/assets/img/sobre-1-480.webp 480w, /assets/img/sobre-1-720.webp 720w, /assets/img/sobre-1-1000.webp 1000w, /assets/img/sobre-1.webp 1333w" sizes="(max-width: 1024px) 88vw, 600px" alt="Dr. Marcus Gonçalves, advogado empresarial em Teresina, PI" loading="lazy" decoding="async">
     </div>
     <div class="sobre-oab-badge">
       <div class="badge-label">OAB/PI</div>
@@ -1538,10 +1558,10 @@ footer {
     <div class="section-label">Sobre o Advogado</div>
     <h2 class="section-title">Quinze anos protegendo<br><em>quem faz negócios.</em></h2>
     <p class="sobre-text">
-      Dr. Marcus Gonçalves é especialista em Direito Empresarial, Trabalhista e Previdenciário. Formado pela UFPI, com três pós-graduações e quinze anos de atuação, passou <strong>seis anos como Secretário da Comissão de Direito do Trabalho da OAB/PI</strong> — experiência que moldou sua visão sobre o que realmente protege uma empresa.
+      Dr. Marcus Gonçalves é especialista em Direito Empresarial, Trabalhista e Previdenciário. Formado pela UFPI, com três pós-graduações e quinze anos de atuação, passou <strong>seis anos como Secretário da Comissão de Direito do Trabalho da OAB/PI</strong>, experiência que moldou sua visão sobre o que realmente protege uma empresa.
     </p>
     <p class="sobre-text">
-      Em 2025, fundou a Marcus Gonçalves Advocacia e Consultoria com um propósito claro: ser o <strong>parceiro jurídico permanente do empresário</strong>. Não o advogado que aparece só quando há processo — mas o profissional que evita que o problema aconteça.
+      Em 2025, fundou a Marcus Gonçalves Advocacia e Consultoria com um propósito claro: ser o <strong>parceiro jurídico permanente do empresário</strong>. Não o advogado que aparece só quando há processo, mas o profissional que evita que o problema aconteça.
     </p>
     <div class="sobre-credentials" role="list">
       <div class="cred-item" role="listitem">
@@ -1550,7 +1570,7 @@ footer {
         </div>
         <div class="cred-text">
           <span>Formação</span>
-          Graduado em Direito — UFPI (2008)
+          Graduado em Direito pela UFPI (2008)
         </div>
       </div>
       <div class="cred-item" role="listitem">
@@ -1568,7 +1588,7 @@ footer {
         </div>
         <div class="cred-text">
           <span>Trajetória OAB</span>
-          6 anos · Secretário da Comissão Trabalhista — OAB/PI
+          6 anos · Secretário da Comissão Trabalhista da OAB/PI
         </div>
       </div>
       <div class="cred-item" role="listitem">
@@ -1594,44 +1614,44 @@ footer {
 
   <div class="servicos-grid">
     <div class="servico-card fade-up">
-      <div class="servico-num">01</div>
+      <div class="servico-num" aria-hidden="true">01</div>
       <div class="servico-title">Pareceres sob demanda</div>
       <p class="servico-desc">Dúvida jurídica? Resposta rápida antes de você tomar uma decisão de risco.</p>
     </div>
     <div class="servico-card fade-up">
-      <div class="servico-num">02</div>
+      <div class="servico-num" aria-hidden="true">02</div>
       <div class="servico-title">Reuniões estratégicas</div>
-      <p class="servico-desc">Presença ativa na sua empresa. Reuniões periódicas com gestão e RH — não só quando há urgência.</p>
+      <p class="servico-desc">Presença ativa na sua empresa. Reuniões periódicas com gestão e RH, não só quando há urgência.</p>
     </div>
     <div class="servico-card fade-up">
-      <div class="servico-num">03</div>
+      <div class="servico-num" aria-hidden="true">03</div>
       <div class="servico-title">Contratos revisados</div>
       <p class="servico-desc">Nenhum contrato assinado sem análise jurídica. Esse é o acordo que protege seu negócio.</p>
     </div>
     <div class="servico-card fade-up">
-      <div class="servico-num">04</div>
+      <div class="servico-num" aria-hidden="true">04</div>
       <div class="servico-title">Processos trabalhistas e cíveis</div>
       <p class="servico-desc">Quando o conflito chega, você já tem quem resolve. Sem correria, sem improviso.</p>
     </div>
     <div class="servico-card fade-up">
-      <div class="servico-num">05</div>
+      <div class="servico-num" aria-hidden="true">05</div>
       <div class="servico-title">Negociação coletiva e CCT</div>
       <p class="servico-desc">Representação em mesas de negociação com respaldo de quem atuou 6 anos na Comissão Trabalhista da OAB/PI.</p>
     </div>
     <div class="servico-card fade-up">
-      <div class="servico-num">06</div>
+      <div class="servico-num" aria-hidden="true">06</div>
       <div class="servico-title">Treinamento de RH</div>
       <p class="servico-desc">Sua equipe preparada para admitir, demitir e gerir com segurança jurídica.</p>
     </div>
     <div class="servico-card fade-up">
-      <div class="servico-num">07</div>
+      <div class="servico-num" aria-hidden="true">07</div>
       <div class="servico-title">Atualizações legislativas</div>
       <p class="servico-desc">A lei muda. Você é avisado antes que a mudança te prejudique.</p>
     </div>
     <div class="servico-card fade-up">
-      <div class="servico-num">08</div>
+      <div class="servico-num" aria-hidden="true">08</div>
       <div class="servico-title">Análise preventiva de risco</div>
-      <p class="servico-desc">Antes de demitir, contratar um sócio ou assinar qualquer documento — orientação jurídica.</p>
+      <p class="servico-desc">Antes de demitir, contratar um sócio ou assinar qualquer documento: orientação jurídica.</p>
     </div>
   </div>
 
@@ -1646,17 +1666,17 @@ footer {
       <div class="publico-card fade-up">
         <div class="publico-icon">🏠</div>
         <div class="publico-name">Condomínios</div>
-        <p class="publico-desc">Porteiros, zeladores, prestadores — o condomínio tem obrigações trabalhistas como qualquer empresa. A assessoria protege o síndico.</p>
+        <p class="publico-desc">Porteiros, zeladores, prestadores: o condomínio tem obrigações trabalhistas como qualquer empresa. A assessoria protege o síndico.</p>
       </div>
       <div class="publico-card fade-up">
         <div class="publico-icon">⚖️</div>
         <div class="publico-name">Sindicatos Patronais</div>
-        <p class="publico-desc">Negociação coletiva, dissídios, CCT. Representação que exige histórico comprovado — e o Dr. Marcus tem.</p>
+        <p class="publico-desc">Negociação coletiva, dissídios, CCT. Representação que exige histórico comprovado, e o Dr. Marcus tem.</p>
       </div>
       <div class="publico-card fade-up">
         <div class="publico-icon">🏥</div>
         <div class="publico-name">Área Médica</div>
-        <p class="publico-desc">Clínicas, médicos sócios, gestores. Contratos com planos, médico PJ, sociedades médicas — alta demanda, pouca especialização no Piauí.</p>
+        <p class="publico-desc">Clínicas, médicos sócios, gestores. Contratos com planos, médico PJ, sociedades médicas: alta demanda, pouca especialização no Piauí.</p>
       </div>
     </div>
   </div>
@@ -1665,12 +1685,12 @@ footer {
 <!-- ── CTA MEIO ── -->
 <div class="cta-mid" aria-label="Chamada para ação">
   <div class="cta-mid-image">
-    <img src="assets/img/escritorio-1.webp" alt="Escritório Marcus Gonçalves Advocacia" loading="lazy">
+    <img src="/assets/img/escritorio-1-960.webp" srcset="/assets/img/escritorio-1-640.webp 640w, /assets/img/escritorio-1-960.webp 960w, /assets/img/escritorio-1-1400.webp 1400w" sizes="(max-width: 1024px) 90vw, 820px" alt="Escritório Marcus Gonçalves Advocacia" loading="lazy" decoding="async">
   </div>
   <div class="cta-mid-content fade-up">
     <div class="cta-mid-label">Reflexão</div>
     <h3 class="cta-mid-title">Quanto está custando não ter assessoria jurídica?</h3>
-    <p class="cta-mid-text">Uma demissão sem respaldo. Um contrato mal redigido. Uma CCT assinada sem revisão. O prejuízo aparece depois — quando já é tarde. O custo da assessoria é previsível. O custo de não ter, não.</p>
+    <p class="cta-mid-text">Uma demissão sem respaldo. Um contrato mal redigido. Uma CCT assinada sem revisão. O prejuízo aparece depois, quando já é tarde. O custo da assessoria é previsível. O custo de não ter, não.</p>
     <a href="https://wa.me/5586981816953?text=Ol%C3%A1%2C%20Dr.%20Marcus%21%20Gostaria%20de%20entender%20como%20a%20assessoria%20jur%C3%ADdica%20funciona%20para%20minha%20empresa." class="btn-primary" target="_blank" rel="noopener">
       Agendar uma conversa
     </a>
@@ -1685,28 +1705,28 @@ footer {
       <h2 class="section-title">Advocacia preventiva.<br><em>Não reativa.</em></h2>
       <div class="diferenciais-list" role="list">
         <div class="diferencial-item" role="listitem">
-          <div class="diferencial-num">01</div>
+          <div class="diferencial-num" aria-hidden="true">01</div>
           <div class="diferencial-body">
             <div class="diferencial-title">Três áreas. Um único profissional.</div>
             <p class="diferencial-desc">Trabalhista, Empresarial e Previdenciário sob um único contrato. Seu negócio protegido sem a fragmentação de múltiplos escritórios.</p>
           </div>
         </div>
         <div class="diferencial-item" role="listitem">
-          <div class="diferencial-num">02</div>
+          <div class="diferencial-num" aria-hidden="true">02</div>
           <div class="diferencial-body">
             <div class="diferencial-title">Parceiro permanente, não pontual.</div>
             <p class="diferencial-desc">Dr. Marcus não aparece só quando há processo. Ele está presente nas decisões que evitam o problema.</p>
           </div>
         </div>
         <div class="diferencial-item" role="listitem">
-          <div class="diferencial-num">03</div>
+          <div class="diferencial-num" aria-hidden="true">03</div>
           <div class="diferencial-body">
             <div class="diferencial-title">Autoridade técnica comprovada.</div>
             <p class="diferencial-desc">Seis anos como Secretário da Comissão Trabalhista da OAB/PI. Experiência que vai além da teoria.</p>
           </div>
         </div>
         <div class="diferencial-item" role="listitem">
-          <div class="diferencial-num">04</div>
+          <div class="diferencial-num" aria-hidden="true">04</div>
           <div class="diferencial-body">
             <div class="diferencial-title">Comunicação direta e acessível.</div>
             <p class="diferencial-desc">Questões jurídicas complexas explicadas de forma clara para quem precisa tomar decisões, não para quem estudou Direito.</p>
@@ -1716,7 +1736,7 @@ footer {
     </div>
     <div class="diferenciais-image fade-up">
       <div class="diferenciais-img-wrap">
-        <img src="assets/img/sobre-2.webp" alt="Dr. Marcus Gonçalves no escritório" loading="lazy">
+        <img src="/assets/img/sobre-2-720.webp" srcset="/assets/img/sobre-2-480.webp 480w, /assets/img/sobre-2-720.webp 720w, /assets/img/sobre-2-1000.webp 1000w, /assets/img/sobre-2.webp 1333w" sizes="(max-width: 1024px) 90vw, 600px" alt="Dr. Marcus Gonçalves no escritório" loading="lazy" decoding="async">
       </div>
       <div class="diferenciais-img-accent" aria-hidden="true"></div>
     </div>
@@ -1726,19 +1746,19 @@ footer {
 <!-- ── GALERIA ── -->
 <div class="galeria" aria-label="Galeria do escritório" role="img">
   <div class="galeria-item">
-    <img src="assets/img/escritorio-2.webp" alt="Escritório Marcus Gonçalves — sala principal" loading="lazy">
+    <img src="/assets/img/escritorio-2-960.webp" srcset="/assets/img/escritorio-2-640.webp 640w, /assets/img/escritorio-2-960.webp 960w, /assets/img/escritorio-2-1400.webp 1400w" sizes="(max-width: 1024px) 60vw, 63vw" alt="Escritório Marcus Gonçalves, sala principal" loading="lazy" decoding="async">
   </div>
   <div class="galeria-item">
-    <img src="assets/img/escritorio-3.webp" alt="Escritório Marcus Gonçalves — detalhe da mesa" loading="lazy">
+    <img src="/assets/img/escritorio-3-700.webp" srcset="/assets/img/escritorio-3-400.webp 400w, /assets/img/escritorio-3-700.webp 700w, /assets/img/escritorio-3.webp 1333w" sizes="(max-width: 1024px) 50vw, 25vw" alt="Escritório Marcus Gonçalves, detalhe da mesa" loading="lazy" decoding="async">
   </div>
   <div class="galeria-item">
-    <img src="assets/img/escritorio-4.webp" alt="Escritório Marcus Gonçalves — ambiente" loading="lazy">
+    <img src="/assets/img/escritorio-4-700.webp" srcset="/assets/img/escritorio-4-400.webp 400w, /assets/img/escritorio-4-700.webp 700w, /assets/img/escritorio-4.webp 1333w" sizes="(max-width: 1024px) 50vw, 25vw" alt="Escritório Marcus Gonçalves, ambiente" loading="lazy" decoding="async">
   </div>
   <div class="galeria-item">
-    <img src="assets/img/escritorio-5.webp" alt="Escritório Marcus Gonçalves — detalhe" loading="lazy">
+    <img src="/assets/img/escritorio-5-700.webp" srcset="/assets/img/escritorio-5-400.webp 400w, /assets/img/escritorio-5-700.webp 700w, /assets/img/escritorio-5.webp 1333w" sizes="(max-width: 1024px) 50vw, 25vw" alt="Escritório Marcus Gonçalves, detalhe" loading="lazy" decoding="async">
   </div>
   <div class="galeria-item">
-    <img src="assets/img/escritorio-6.webp" alt="Escritório Marcus Gonçalves — visão geral" loading="lazy">
+    <img src="/assets/img/escritorio-6-960.webp" srcset="/assets/img/escritorio-6-640.webp 640w, /assets/img/escritorio-6-960.webp 960w, /assets/img/escritorio-6.webp 2000w" sizes="(max-width: 1024px) 60vw, 32vw" alt="Escritório Marcus Gonçalves, visão geral" loading="lazy" decoding="async">
   </div>
 </div>
 
@@ -1799,7 +1819,7 @@ footer {
           </div>
           <div>
             <div class="contato-info-label">Localização</div>
-            <div class="contato-info-text">R. Juíz João Almeida, 1806 — Horto, Teresina/PI</div>
+            <div class="contato-info-text">R. Juíz João Almeida, 1806, Horto, Teresina/PI</div>
           </div>
         </a>
         <a href="https://www.instagram.com/marcusgoncalves.adv/" class="contato-info" target="_blank" rel="noopener" role="listitem" aria-label="Instagram">
@@ -1829,6 +1849,7 @@ footer {
     </div>
   </div>
 </section>
+</main>
 
 <!-- ── FOOTER ── -->
 <footer>
@@ -1855,9 +1876,12 @@ footer {
 // ── NAV MOBILE ──
 const toggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
-toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+toggle.addEventListener('click', () => {
+  const aberto = navLinks.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', aberto);
+});
 navLinks.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => navLinks.classList.remove('open'));
+  a.addEventListener('click', () => { navLinks.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); });
 });
 
 // ── SCROLL ANIMATIONS ──
@@ -1893,7 +1917,16 @@ function renderArtigosHome() {
 }
 renderArtigosHome();
 </script>
-<script defer src="js/analytics-events.js"></script>
+<script>
+// Umami entra só depois que a página termina de abrir: a estatística nunca atrasa o carregamento
+window.addEventListener('load', () => {
+  const u = document.createElement('script');
+  u.src = 'https://analytics.agenciamoa.com.br/script.js';
+  u.setAttribute('data-website-id', '37c20a71-f719-4f9b-90f9-f53be06717fc');
+  u.onload = () => { const e = document.createElement('script'); e.src = '/js/analytics-events.js'; document.body.appendChild(e); };
+  document.head.appendChild(u);
+});
+</script>
 
 </body>
 </html>
