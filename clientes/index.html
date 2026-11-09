@@ -389,7 +389,6 @@ footer {
   }
 }
 </script>
-<script defer src="https://analytics.agenciamoa.com.br/script.js" data-website-id="37c20a71-f719-4f9b-90f9-f53be06717fc"></script>
 </head>
 <body>
 
@@ -687,7 +686,7 @@ if (idxPerfil >= 0) {
 function waitUmami(cb, tentativas) {
   tentativas = tentativas || 0;
   if (window.umami && typeof window.umami.track === 'function') cb();
-  else if (tentativas < 20) setTimeout(() => waitUmami(cb, tentativas + 1), 300);
+  else if (tentativas < 50) setTimeout(() => waitUmami(cb, tentativas + 1), 300);
 }
 function rastrear(evento, dados) { waitUmami(() => window.umami.track(evento, dados)); }
 if (idxPerfil >= 0) rastrear('link_perfil', { perfil: PERFIS[idxPerfil].nome });
@@ -703,8 +702,16 @@ document.addEventListener('click', e => {
   const sel = () => { const s = b.previousElementSibling, r = document.createRange(); r.selectNodeContents(s); const g = getSelection(); g.removeAllRanges(); g.addRange(r); };
   try { navigator.clipboard.writeText(t).then(ok).catch(sel); } catch (_) { sel(); }
 });
+
+// ── UMAMI: carrega só depois da página aberta, para a estatística nunca atrasar a abertura ──
+window.addEventListener('load', () => {
+  const u = document.createElement('script');
+  u.src = 'https://analytics.agenciamoa.com.br/script.js';
+  u.setAttribute('data-website-id', '37c20a71-f719-4f9b-90f9-f53be06717fc');
+  u.onload = () => { const e = document.createElement('script'); e.src = '/js/analytics-events.js'; document.body.appendChild(e); };
+  document.head.appendChild(u);
+});
 </script>
-<script defer src="/js/analytics-events.js"></script>
 
 </body>
 </html>
