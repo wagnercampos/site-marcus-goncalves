@@ -172,7 +172,8 @@ nav {
 /* ── HERO ── */
 #hero {
   position: relative;
-  min-height: 100vh;
+  /* 75vw = altura da foto (proporção 2:3 em meia tela): o topo já nasce no tamanho final, sem pulo */
+  min-height: max(100vh, 75vw);
   display: grid;
   grid-template-columns: 1fr 1fr;
   overflow: hidden;
