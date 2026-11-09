@@ -690,6 +690,30 @@ nav {
   font-weight: 300;
 }
 
+/* Clientes atuais → /clientes/ */
+.clientes-cta {
+  max-width: 1400px;
+  margin: 64px auto 0;
+  padding-top: 48px;
+  border-top: 1px solid rgba(168,136,104,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.clientes-cta-text {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold-light);
+}
+
 /* ── CTA MEIO ── */
 .cta-mid {
   background: var(--off);
@@ -1317,6 +1341,7 @@ footer {
   .galeria { grid-template-columns: 1fr 1fr; grid-template-rows: 160px 160px 160px; }
   
   footer { flex-direction: column; text-align: center; }
+  .footer-nav { justify-content: center; gap: 12px 24px; }
   .footer-legal { text-align: center; max-width: 100%; }
   
   .whatsapp-float { bottom: 20px; right: 20px; }
@@ -1568,6 +1593,11 @@ footer {
         <p class="publico-desc">Clínicas, médicos sócios, gestores. Contratos com planos, médico PJ, sociedades médicas — alta demanda, pouca especialização no Piauí.</p>
       </div>
     </div>
+  </div>
+
+  <div class="clientes-cta fade-up">
+    <p class="clientes-cta-text">Já é cliente da assessoria?</p>
+    <a href="/clientes/" class="btn-secondary">Veja a proteção do sócio <span aria-hidden="true">→</span></a>
   </div>
 </section>
 
