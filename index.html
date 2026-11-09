@@ -26,7 +26,8 @@
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/cormorant-garamond-v21.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/cormorant-garamond-italic-v21.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/outfit-v15.woff2" crossorigin>
-<link rel="preload" as="image" href="/assets/img/hero.webp" imagesrcset="/assets/img/hero-480.webp 480w, /assets/img/hero-720.webp 720w, /assets/img/hero-1000.webp 1000w, /assets/img/hero.webp 1333w" imagesizes="(max-width: 1024px) 100vw, 50vw" fetchpriority="high">
+<link rel="preload" as="image" href="/assets/img/hero-m-800.webp" imagesrcset="/assets/img/hero-m-480.webp 480w, /assets/img/hero-m-800.webp 800w, /assets/img/hero-m-1200.webp 1200w" imagesizes="100vw" media="(max-width: 1024px)" fetchpriority="high">
+<link rel="preload" as="image" href="/assets/img/hero.webp" imagesrcset="/assets/img/hero-720.webp 720w, /assets/img/hero-1000.webp 1000w, /assets/img/hero.webp 1333w" imagesizes="50vw" media="(min-width: 1025px)" fetchpriority="high">
 
 <style>
 @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 300 500; font-display: swap; src: url(/assets/fonts/cormorant-garamond-v21.woff2) format('woff2'); }
@@ -1505,7 +1506,10 @@ footer {
     </div>
   </div>
   <div class="hero-right" aria-hidden="true">
-    <img src="/assets/img/hero.webp" srcset="/assets/img/hero-480.webp 480w, /assets/img/hero-720.webp 720w, /assets/img/hero-1000.webp 1000w, /assets/img/hero.webp 1333w" sizes="(max-width: 1024px) 100vw, 50vw" alt="Dr. Marcus Gonçalves, advogado empresarial em Teresina" fetchpriority="high">
+    <picture>
+      <source media="(max-width: 1024px)" srcset="/assets/img/hero-m-480.webp 480w, /assets/img/hero-m-800.webp 800w, /assets/img/hero-m-1200.webp 1200w" sizes="100vw">
+      <img src="/assets/img/hero.webp" srcset="/assets/img/hero-720.webp 720w, /assets/img/hero-1000.webp 1000w, /assets/img/hero.webp 1333w" sizes="50vw" alt="Dr. Marcus Gonçalves, advogado empresarial em Teresina" fetchpriority="high">
+    </picture>
     <div class="hero-overlay"></div>
   </div>
   <div class="hero-scroll" aria-hidden="true">Role para baixo</div>
